@@ -54,6 +54,6 @@ class Speller(Checks):
     @check("compiles")
     @valgrind
     def substring(self):
-        """handles substrings properly"""
+        """handles substrings properly (e.g.: "caterp" should not be valid just because "caterpillar" is in the dictionary)"""
         self.add("substring")
         self.spawn("./speller substring/dict substring/text").stdout(File("substring/out")).exit(0)
